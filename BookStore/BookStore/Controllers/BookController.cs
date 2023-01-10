@@ -51,6 +51,9 @@ namespace BookStore.Controllers
                     return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id });
                 }
             }
+
+            //ModelState.AddModelError("","This is custom error message"); //Will be shown in validation summary with Model only as attribute
+
             return View();
         }
     }
