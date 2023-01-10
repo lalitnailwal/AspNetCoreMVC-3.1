@@ -4,6 +4,8 @@ namespace BookStore.Models
 {
     public class BookModel
     {
+        //[DataType(DataType.DateTime)]
+        //public string MyField { get; set; }
         public int Id { get; set; }
         [StringLength(100, MinimumLength =5)]
         [Required(ErrorMessage = "Please enter the title of your book")]
