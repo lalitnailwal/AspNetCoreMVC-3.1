@@ -25,6 +25,7 @@ namespace BookStore.Repository
                 CreatedOn = DateTime.UtcNow,
                 Description = bookModel.Description,
                 Title = bookModel.Title,
+                Language = bookModel.Language,
                 TotalPages = bookModel.TotalPages.HasValue? bookModel.TotalPages.Value : 0,
                 UpdatedOn = DateTime.UtcNow
             };

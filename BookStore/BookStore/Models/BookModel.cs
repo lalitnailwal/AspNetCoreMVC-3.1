@@ -3,9 +3,7 @@
 namespace BookStore.Models
 {
     public class BookModel
-    {
-        //[DataType(DataType.DateTime)]
-        //public string MyField { get; set; }
+    {        
         public int Id { get; set; }
         [StringLength(100, MinimumLength =5)]
         [Required(ErrorMessage = "Please enter the title of your book")]
@@ -15,6 +13,7 @@ namespace BookStore.Models
         [StringLength(500, MinimumLength = 30)]
         public string Description { get; set; }
         public string Category { get; set; }
+        [Required(ErrorMessage ="Please choose the language for your book")]
         public string Language { get; set; }
         [Required(ErrorMessage ="Please enter the total pages")]
         [Display(Name = "Total Pages of Book")]
