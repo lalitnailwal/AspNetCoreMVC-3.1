@@ -39,6 +39,9 @@ namespace BookStore.Controllers
             {
                 Language = "English"
             };
+
+            ViewBag.Language = new List<string>() { "English", "Hindi", "Dutch" };
+
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
             return View(model);
@@ -55,7 +58,7 @@ namespace BookStore.Controllers
                     return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id });
                 }
             }
-
+            ViewBag.Language = new List<string>() { "English", "Hindi", "Dutch" };
             //ModelState.AddModelError("","This is custom error message"); //Will be shown in validation summary with Model only as attribute
 
             return View();

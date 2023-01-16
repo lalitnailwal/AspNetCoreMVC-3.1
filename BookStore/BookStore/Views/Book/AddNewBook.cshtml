@@ -16,11 +16,8 @@
     <div asp-validation-summary="All" class="text-danger"></div>
     <div>
         <label asp-for="Language" class="form-label"></label>
-        <select asp-for="Language" te class="form-control">
-            <option value="">Please Choose your Language</option>
-            <option value="Hindi">Hindi (One of the best language)</option>
-            <option value="English">English (Global Language)</option>
-            <option value="Dutch">Dutch (My Custom Message)</option>
+        <select asp-for="Language" class="form-control" asp-items="new SelectList(ViewBag.Language)">
+            <option value="">Please choose your language</option>
         </select>
         <span asp-validation-for="Language" class="text-danger"></span>
     </div>
