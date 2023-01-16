@@ -40,21 +40,7 @@ namespace BookStore.Controllers
             var model = new BookModel()
             {
                 //Language = "3"
-            };
-
-            var group1 = new SelectListGroup() { Name = "Group1" };
-            var group2 = new SelectListGroup() { Name = "Group2", Disabled=true};
-            var group3 = new SelectListGroup() { Name = "Group3" };
-
-            ViewBag.Language = new List<SelectListItem>()
-            {
-                new SelectListItem(){Text = "Hindi", Value = "1", Group = group1},
-                new SelectListItem(){Text = "English", Value = "2", Group = group1},
-                new SelectListItem(){Text = "Dutch", Value = "3", Group = group2},
-                new SelectListItem(){Text = "Tamil", Value = "4", Group = group2},
-                new SelectListItem(){Text = "Urdu", Value = "5", Group = group3},
-                new SelectListItem(){Text = "Chinese", Value = "6", Group = group3},
-            };
+            };            
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
@@ -71,20 +57,7 @@ namespace BookStore.Controllers
                 {
                     return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id });
                 }
-            }
-            var group1 = new SelectListGroup() { Name = "Group1" };
-            var group2 = new SelectListGroup() { Name = "Group2", Disabled = true };
-            var group3 = new SelectListGroup() { Name = "Group3" };
-
-            ViewBag.Language = new List<SelectListItem>()
-            {
-                new SelectListItem(){Text = "Hindi", Value = "1", Group = group1},
-                new SelectListItem(){Text = "English", Value = "2", Group = group1},
-                new SelectListItem(){Text = "Dutch", Value = "3", Group = group2},
-                new SelectListItem(){Text = "Tamil", Value = "4", Group = group2},
-                new SelectListItem(){Text = "Urdu", Value = "5", Group = group3},
-                new SelectListItem(){Text = "Chinese", Value = "6", Group = group3},
-            };
+            }           
 
             //ModelState.AddModelError("","This is custom error message"); //Will be shown in validation summary with Model only as attribute
 

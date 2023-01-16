@@ -1,4 +1,5 @@
-﻿@model BookModel
+﻿@using BookStore.Enums
+@model BookModel
 
 <div class="container">
     <h3 class="display-4">Add new book</h3>
@@ -15,11 +16,11 @@
 <form method="post" asp-controller="Book" asp-action="AddNewBook">
     <div asp-validation-summary="All" class="text-danger"></div>
     <div>
-        <label asp-for="Language" class="form-label"></label>
-        <select asp-for="Language" class="form-control" asp-items="ViewBag.Language">
+        <label asp-for="LanguageEnum" class="form-label"></label>
+        <select asp-for="LanguageEnum" class="form-control" asp-items="Html.GetEnumSelectList<LanguageEnum>()">
             <option value="">Please choose your language</option>
         </select>
-        <span asp-validation-for="Language" class="text-danger"></span>
+        <span asp-validation-for="LanguageEnum" class="text-danger"></span>
     </div>
 
     <div>
