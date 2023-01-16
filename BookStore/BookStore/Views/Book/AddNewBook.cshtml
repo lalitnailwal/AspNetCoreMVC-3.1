@@ -16,11 +16,11 @@
 <form method="post" asp-controller="Book" asp-action="AddNewBook">
     <div asp-validation-summary="All" class="text-danger"></div>
     <div>
-        <label asp-for="LanguageEnum" class="form-label"></label>
-        <select asp-for="LanguageEnum" class="form-control" asp-items="Html.GetEnumSelectList<LanguageEnum>()">
+        <label asp-for="LanguageId" class="form-label"></label>
+        <select asp-for="LanguageId" class="form-control" asp-items="ViewBag.Language">
             <option value="">Please choose your language</option>
         </select>
-        <span asp-validation-for="LanguageEnum" class="text-danger"></span>
+        <span asp-validation-for="LanguageId" class="text-danger"></span>
     </div>
 
     <div>

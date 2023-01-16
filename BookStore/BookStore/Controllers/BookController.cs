@@ -11,10 +11,12 @@ namespace BookStore.Controllers
     public class BookController : Controller
     {
         private readonly BookRepository _bookRepository = null;
+        private readonly LanguageRepository _languageRepository = null;
 
-        public BookController(BookRepository bookRepository)
+        public BookController(BookRepository bookRepository, LanguageRepository languageRepository)
         {
             _bookRepository = bookRepository;
+            _languageRepository = languageRepository;
         }
 
         public async Task<ViewResult> GetAllBooks()
@@ -32,15 +34,17 @@ namespace BookStore.Controllers
 
         public List<BookModel> SearchBooks(string bookName, string authorName)
         {
-            return _bookRepository.SearchBooks(bookName, authorName);
+            return null;
         }
 
-        public ViewResult AddNewBook(bool isSuccess= false, int bookId = 0)
+        public async Task<ViewResult> AddNewBook(bool isSuccess= false, int bookId = 0)
         {
             var model = new BookModel()
             {
                 //Language = "3"
-            };            
+            };
+
+            ViewBag.Language = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
@@ -57,21 +61,13 @@ namespace BookStore.Controllers
                 {
                     return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id });
                 }
-            }           
+            }
+
+            ViewBag.Language = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
 
             //ModelState.AddModelError("","This is custom error message"); //Will be shown in validation summary with Model only as attribute
 
             return View();
-        }
-
-        private List<LanguageModel> GetLanguage()
-        {
-            return new List<LanguageModel>()
-            {
-                new LanguageModel() {Id = 1, Text = "English"},
-                new LanguageModel() {Id = 2, Text = "Hindi"},
-                new LanguageModel() {Id = 3, Text = "Dutch"}
-            };
         }
     }
 }
