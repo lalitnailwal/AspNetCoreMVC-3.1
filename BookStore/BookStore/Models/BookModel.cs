@@ -1,4 +1,5 @@
 ﻿using BookStore.Enums;
+using BookStore.Helpers;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -8,8 +9,9 @@ namespace BookStore.Models
     {        
         public int Id { get; set; }
 
-        [StringLength(100, MinimumLength =5)]
-        [Required(ErrorMessage = "Please enter the title of your book")]
+        //[StringLength(100, MinimumLength =5)]
+        //[Required(ErrorMessage = "Please enter the title of your book")]
+        [MyCustomValidation]
         public string Title { get; set; }
 
         [Required(ErrorMessage = "Plese enter the author name")]
