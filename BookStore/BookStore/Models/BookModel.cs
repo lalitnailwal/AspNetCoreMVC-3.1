@@ -11,7 +11,7 @@ namespace BookStore.Models
 
         //[StringLength(100, MinimumLength =5)]
         //[Required(ErrorMessage = "Please enter the title of your book")]
-        [MyCustomValidation(ErrorMessage = "jdjdj")]
+        [MyCustomValidation("azure")]
         public string Title { get; set; }
 
         [Required(ErrorMessage = "Plese enter the author name")]
