@@ -1,6 +1,7 @@
 ﻿using BookStore.Models;
 using BookStore.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -40,7 +41,7 @@ namespace BookStore.Controllers
                 Language = "English"
             };
 
-            ViewBag.Language = new List<string>() { "English", "Hindi", "Dutch" };
+            ViewBag.Language = new SelectList(new List<string>() { "English", "Hindi", "Dutch" });
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
@@ -58,7 +59,7 @@ namespace BookStore.Controllers
                     return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id });
                 }
             }
-            ViewBag.Language = new List<string>() { "English", "Hindi", "Dutch" };
+            ViewBag.Language = new SelectList(new List<string>() { "English", "Hindi", "Dutch" });
             //ModelState.AddModelError("","This is custom error message"); //Will be shown in validation summary with Model only as attribute
 
             return View();
