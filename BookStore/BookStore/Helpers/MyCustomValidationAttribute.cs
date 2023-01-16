@@ -16,7 +16,7 @@ namespace BookStore.Helpers
                 }
             }
             
-            return new ValidationResult("BookName does not contain the desired value");
+            return new ValidationResult(ErrorMessage ?? "BookName does not contain the desired value");
         }
     }
 }
