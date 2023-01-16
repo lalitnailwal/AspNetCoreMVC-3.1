@@ -38,10 +38,10 @@ namespace BookStore.Controllers
         {
             var model = new BookModel()
             {
-                Language = "English"
+                Language = "2"
             };
 
-            ViewBag.Language = new SelectList(new List<string>() { "English", "Hindi", "Dutch" });
+            ViewBag.Language = new SelectList(GetLanguage(), "Id", "Text");
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
@@ -59,10 +59,20 @@ namespace BookStore.Controllers
                     return RedirectToAction(nameof(AddNewBook), new { isSuccess = true, bookId = id });
                 }
             }
-            ViewBag.Language = new SelectList(new List<string>() { "English", "Hindi", "Dutch" });
+            ViewBag.Language = new SelectList(GetLanguage(), "Id", "Text");
             //ModelState.AddModelError("","This is custom error message"); //Will be shown in validation summary with Model only as attribute
 
             return View();
+        }
+
+        private List<LanguageModel> GetLanguage()
+        {
+            return new List<LanguageModel>()
+            {
+                new LanguageModel() {Id = 1, Text = "English"},
+                new LanguageModel() {Id = 2, Text = "Hindi"},
+                new LanguageModel() {Id = 3, Text = "Dutch"}
+            };
         }
     }
 }
