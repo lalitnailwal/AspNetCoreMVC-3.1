@@ -9,3 +9,5 @@
 /BookStore/BookStore/BookStore.csproj.user
 /BookStore/BookStore/wwwroot/lib
 /BookStore/BookStore/bin/Release/netcoreapp3.1
+/BookStore/BookStore/wwwroot/jquery-validate
+/BookStore/BookStore/wwwroot/jquery-validation-unobtrusive
