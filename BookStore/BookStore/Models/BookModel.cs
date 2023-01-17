@@ -1,5 +1,6 @@
 ﻿using BookStore.Enums;
 using BookStore.Helpers;
+using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -30,5 +31,9 @@ namespace BookStore.Models
         [Required(ErrorMessage ="Please enter the total pages")]
         [Display(Name = "Total Pages of Book")]
         public int? TotalPages { get; set; }
+
+        [Required]
+        [Display(Name = "Choose the cover photo of your book")]
+        public IFormFile CoverPhoto { get; set; }
     }
 }
