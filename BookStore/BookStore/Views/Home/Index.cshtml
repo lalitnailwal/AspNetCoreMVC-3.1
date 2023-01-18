@@ -20,6 +20,10 @@
         @*<h3 class="h3">Top books</h3>*@
         <big>Top books</big>
         <p big>Top books using attributes</p>
+
+        @await Component.InvokeAsync("TopBooks");
+        <vc:top-books></vc:top-books>
+
         <div class="row">
             <div class="col-md-3">
                 @*<partial name="_bookThumbNail" model="new BookModel()" />*@
