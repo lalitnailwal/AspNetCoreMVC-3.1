@@ -21,8 +21,8 @@
         <big>Top books</big>
         <p big>Top books using attributes</p>
 
-        @*@await Component.InvokeAsync("TopBooks");*@
-        <vc:top-books></vc:top-books>
+        @*@await Component.InvokeAsync("TopBooks", new {count = 3});*@
+        <vc:top-books count="3"></vc:top-books>
 
         
     </div>
