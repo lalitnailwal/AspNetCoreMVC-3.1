@@ -21,14 +21,21 @@
         <big>Top books</big>
         <p big>Top books using attributes</p>
         <div class="row">
-            <div class="col-md-4">
-                <partial name="_bookThumbNail" model="new BookModel()" />
+            <div class="col-md-3">
+                @*<partial name="_bookThumbNail" model="new BookModel()" />*@
+                @Html.Partial("_bookThumbNail", new BookModel())
             </div>
-            <div class="col-md-4">
-                <partial name="_bookThumbNail" model="new BookModel()" />
+            <div class="col-md-3">
+                @*<partial name="_bookThumbNail" model="new BookModel()" />*@
+                @await Html.PartialAsync("_bookThumbNail", new BookModel())
             </div>
-            <div class="col-md-4">
-                <partial name="_bookThumbNail" model="new BookModel()" />
+            <div class="col-md-3">
+                @*<partial name="_bookThumbNail" model="new BookModel()" />*@
+                @{Html.RenderPartial("_bookThumbNail", new BookModel());}
+            </div>
+            <div class="col-md-3">
+                @*<partial name="_bookThumbNail" model="new BookModel()" />*@
+                @{await Html.RenderPartialAsync("_bookThumbNail", new BookModel());}
             </div>
         </div>
     </div>
