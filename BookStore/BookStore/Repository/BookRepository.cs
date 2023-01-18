@@ -28,8 +28,8 @@ namespace BookStore.Repository
                 LanguageId = bookModel.LanguageId,
                 TotalPages = bookModel.TotalPages.HasValue ? bookModel.TotalPages.Value : 0,
                 UpdatedOn = DateTime.UtcNow,
-                CoverImageUrl = bookModel.CoverImageUrl
-                
+                CoverImageUrl = bookModel.CoverImageUrl,
+                BookPdfUrl = bookModel.BookPdfUrl
             };
 
             newBook.bookGallery = new List<BookGallery>();
@@ -85,7 +85,8 @@ namespace BookStore.Repository
                         Id = g.Id,
                         Name = g.Name,
                         URL = g.URL
-                    }).ToList()
+                    }).ToList(),
+                    BookPdfUrl = book.BookPdfUrl
                 }).FirstOrDefaultAsync();
         }
     }
