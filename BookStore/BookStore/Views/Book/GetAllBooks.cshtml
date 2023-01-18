@@ -9,8 +9,9 @@
     <div class="row">
         @foreach (var book in Model)
         {
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
+        <div class="col-md-4">
+            <partial name="_bookThumbNail" model="@book" />
+                @*<div class="card mb-4 shadow-sm">
                     <img src="@book.CoverImageUrl" class="img-thumbnail" />
                     <div class="card-body">
                         <h3 class="card-title">@book.Title</h3>
@@ -22,8 +23,8 @@
                             <small class="text-muted">@book.Author</small>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>*@
+        </div>
         }
     </div>
 </div>
