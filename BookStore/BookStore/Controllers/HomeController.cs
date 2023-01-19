@@ -11,6 +11,7 @@ namespace BookStore.Controllers
             return View();
         }
 
+        [Route("~/about-us/{id:int}/{name:alpha:minlength(5)}")]
         public ViewResult AboutUs(int id, string name)
         {
             return View();
