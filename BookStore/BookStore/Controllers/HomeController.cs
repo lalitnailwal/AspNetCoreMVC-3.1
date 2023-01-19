@@ -2,10 +2,10 @@
 
 namespace BookStore.Controllers
 {
+    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
-        [Route("")]
-        [Route("[controller]/[action]")]
+        [Route("")]        
         public ViewResult Index()
         {
             return View();
