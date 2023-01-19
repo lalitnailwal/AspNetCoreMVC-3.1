@@ -62,7 +62,7 @@ namespace BookStore
                 endpoints.MapControllerRoute(
                     name: "Aboutus",
                     pattern: "about-us",
-                    defaults: new { controllers = "Home", action= "AboutUs" });
+                    defaults: new { controller = "Home", action= "AboutUs" });
             });
         }
     }
