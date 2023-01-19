@@ -9,11 +9,13 @@ namespace BookStore.Controllers
             return View();
         }
 
-        public ViewResult AboutUs()
+        [Route("about-us/test/{id?}/{name}")]
+        public ViewResult AboutUs(int id, string name)
         {
             return View();
         }
 
+        [Route("contact-us")]
         public ViewResult ContactUs()
         {
             return View();
