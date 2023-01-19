@@ -5,7 +5,7 @@ namespace BookStore.Controllers
     public class HomeController : Controller
     {
         [Route("")]
-        [Route("home/index")]
+        [Route("[controller]/[action]")]
         public ViewResult Index()
         {
             return View();
