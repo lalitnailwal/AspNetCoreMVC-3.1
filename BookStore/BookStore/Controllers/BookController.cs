@@ -26,6 +26,7 @@ namespace BookStore.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
+        [Route("~/all-books")]
         public async Task<ViewResult> GetAllBooks()
         {
             var data = await _bookRepository.GetAllBooks();
