@@ -9,7 +9,7 @@ namespace BookStore.Controllers
             return View();
         }
 
-        [Route("about-us/test/{id?}/{name}")]
+        [HttpGet("about-us")]
         public ViewResult AboutUs(int id, string name)
         {
             return View();
