@@ -9,13 +9,13 @@ namespace BookStore.Controllers
             return View();
         }
 
-        [HttpGet("about-us")]
+        [HttpGet("about-us", Name ="about-us", Order = 1)]
         public ViewResult AboutUs(int id, string name)
         {
             return View();
         }
 
-        [Route("contact-us")]
+        [Route("contact-us", Name ="contact-us", Order = 1)]
         public ViewResult ContactUs()
         {
             return View();
