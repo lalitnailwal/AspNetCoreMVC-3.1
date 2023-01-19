@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Repository
 {
-    public class BookRepository
+    public class BookRepository : IBookRepository
     {
         private readonly BookStoreContext _context = null;
 
@@ -36,9 +36,9 @@ namespace BookStore.Repository
 
             foreach (var file in bookModel.Gallery)
             {
-                newBook.bookGallery.Add(new BookGallery() 
-                { 
-                    Name = file.Name, 
+                newBook.bookGallery.Add(new BookGallery()
+                {
+                    Name = file.Name,
                     URL = file.URL
                 });
 
@@ -97,8 +97,8 @@ namespace BookStore.Repository
                     Title = book.Title,
                     TotalPages = book.TotalPages,
                     CoverImageUrl = book.CoverImageUrl,
-                    Gallery = book.bookGallery.Select(g => new GalleryModel() 
-                    { 
+                    Gallery = book.bookGallery.Select(g => new GalleryModel()
+                    {
                         Id = g.Id,
                         Name = g.Name,
                         URL = g.URL

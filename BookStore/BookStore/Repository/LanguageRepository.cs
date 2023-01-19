@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Repository
 {
-    public class LanguageRepository
+    public class LanguageRepository : ILanguageRepository
     {
         private readonly BookStoreContext _context = null;
 
@@ -18,8 +18,8 @@ namespace BookStore.Repository
 
         public async Task<List<LanguageModel>> GetLanguages()
         {
-            return await _context.Language.Select( x => new LanguageModel()
-            { 
+            return await _context.Language.Select(x => new LanguageModel()
+            {
                 Id = x.Id,
                 Name = x.Name,
                 Description = x.Description
