@@ -53,7 +53,7 @@ namespace BookStore.Controllers
                 //Language = "3"
             };
 
-            ViewBag.Language = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
+            //ViewBag.Language = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
 
             ViewBag.IsSuccess = isSuccess;
             ViewBag.BookId = bookId;
@@ -102,7 +102,7 @@ namespace BookStore.Controllers
                 }
             }
 
-            ViewBag.Language = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
+            //ViewBag.Language = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
 
             //ModelState.AddModelError("","This is custom error message"); //Will be shown in validation summary with Model only as attribute
 

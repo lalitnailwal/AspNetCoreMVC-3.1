@@ -106,7 +106,13 @@ namespace BookStore.Repository
                     BookPdfUrl = book.BookPdfUrl
                 }).FirstOrDefaultAsync();
         }
+        public string GetAppName()
+        {
+            return "BookStore Application";
+        }
     }
+
+    
 
     //public List<BookModel> SearchBooks(string title, string authorName)
     //{
