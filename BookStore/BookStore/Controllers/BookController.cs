@@ -33,6 +33,7 @@ namespace BookStore.Controllers
             return View(data);
         }
 
+        [Route("~/book-details/{id}", Name = "bookDetailsRoute")]
         public async Task<ViewResult> GetBook(int id)
         {
             var data = await _bookRepository.GetBookById(id);

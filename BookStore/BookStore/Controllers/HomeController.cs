@@ -5,7 +5,7 @@ namespace BookStore.Controllers
     [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
-        [Route("")]        
+        [Route("~/")]        
         public ViewResult Index()
         {
             return View();
